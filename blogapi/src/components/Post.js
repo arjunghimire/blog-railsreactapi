@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './../App.css';
 import axios from 'axios';
+import TextTruncate from 'react-text-truncate'; 
 
 class Post extends Component {
   constructor(props){
@@ -23,13 +24,23 @@ class Post extends Component {
 
   render() {
     return (
-      <div className="card-header">
+      <div className="box">
          {this.state.posts.map((post) => {
          	return(
-         	<div className="tile" key={post.id}>
-         		<h1>{post.title} </h1>
-         		<p> {post.body}</p>
-         	</div>
+           <div className="card-box card">
+            <div className="card-body">
+              <h4 className="card-title">{post.title}</h4>
+              <p className="card-text"> 
+              <TextTruncate
+                  line={3}
+                  truncateText="…"
+                  text={post.body}
+              />
+              </p>
+              <a href="#" >Read More</a> | 
+              <a href="#" >Delete Me</a>
+            </div>
+          </div>
          	)
          })}
 	  </div>

@@ -1,4 +1,12 @@
-.card-header{
-  width: 70%;
-  height: auto;
+.box{
+	padding: 10px;
+}
+.card-box{
+	width: 30%;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.title-header{
+	margin-left: 20px;
 }
